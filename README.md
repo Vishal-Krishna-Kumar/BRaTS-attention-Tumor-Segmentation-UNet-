@@ -18,51 +18,48 @@ The baseline UNet3D implementation is adopted from [PyTorch-3DUNet](https://gith
 ---
 
 ## Repository Structure
-/BRaTs-attention-Tumor-Segmentatiin-UNet-
-├── Segmentation
-    |-3d_attention_unet.py
-    |-BuildingBlocks.py
-    |-sca_3d.py
-    
-├── survivak_prediction
-    |-matlab
-        |-Brats_valid#All the Model feature of UNET and BraTS 
-            |- Best_mode_withRFE_XGB.ipynb
-            |-Normalizing.ipynb
-            |-XGB_withRFE_crossvalidation
-            |-XGBregressor.ipynb
-            |-radiomics_normalized.csv
-            |-radiomic_normalized_SS.csv
-            |-radiomic_normalized_new.csv
-            |-radiomic_test_normalized.csv
-            |-radiomic_valid_normalized.csv
-            |-radiomic_valid_normalized.SS.csv
-            |-Another tow of radiomic files
-            |-submission.csv
-            |-submission_best_14.csv
-            |-submission_best_14_csv
-            |-rest of all the csv and jupyter files 
-        |-Feature Extraction
-            |-Bland Altman plot.ipynb
-            |-Filename_into_textfile.ipynb
-            |-keplen mier.ipynb
-            |-npy_fromcsv.ipynb
-            |-spearmanr.ipynb
-    -Python
-        |-Classification
-            |- All the folders and Model availables with jupyter notebook
-        |-Regression 
-            |- All folders and Model availabkle wirh notebook
-
-├── train.py # Training pipeline
+BRaTs-Attention-Tumor-Segmentation-UNet/
+├── Segmentation/
+│ ├── 3d_attention_unet.py # Main UNet 3D model with attention
+│ ├── BuildingBlocks.py # Building blocks for the UNet architecture
+│ └── sca_3d.py # 3D spatial channel attention module
+│
+├── Survival_Prediction/
+│ ├── Matlab/
+│ │ ├── Brats_valid/ # Validation and feature files for survival prediction
+│ │ │ ├── Best_mode_withRFE_XGB.ipynb
+│ │ │ ├── Normalizing.ipynb
+│ │ │ ├── XGB_withRFE_crossvalidation.ipynb
+│ │ │ ├── XGBregressor.ipynb
+│ │ │ ├── radiomics_normalized.csv
+│ │ │ ├── radiomic_normalized_SS.csv
+│ │ │ ├── radiomic_normalized_new.csv
+│ │ │ ├── radiomic_test_normalized.csv
+│ │ │ ├── radiomic_valid_normalized.csv
+│ │ │ ├── radiomic_valid_normalized.SS.csv
+│ │ │ ├── submission.csv
+│ │ │ ├── submission_best_14.csv
+│ │ │ ├── submission_best_14_csv
+│ │ │ └── ...other CSV and Jupyter files
+│ │ │
+│ │ └── Feature_Extraction/ # Feature extraction notebooks
+│ │ ├── Bland_Altman_plot.ipynb
+│ │ ├── Filename_into_textfile.ipynb
+│ │ ├── keplen_mier.ipynb
+│ │ ├── npy_fromcsv.ipynb
+│ │ └── spearmanr.ipynb
+│ │
+│ └── Python/
+│ ├── Classification/ # Classification models and notebooks
+│ └── Regression/ # Regression models and notebooks
+│
+├── train.py # Training pipeline for segmentation
 ├── evaluate.py # Evaluation pipeline for segmentation metrics
 ├── inference.py # Inference scripts for new MRI volumes
 ├── utils/ # Helper functions (data loaders, augmentation, metrics)
 ├── configs/ # YAML/JSON configuration files for experiments
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
-
-
 ---
 
 ## Dataset
