@@ -6,12 +6,6 @@ The project provides a deep learning framework for **3D brain tumor segmentation
 
 The baseline UNet3D implementation is adopted from [PyTorch-3DUNet](https://github.com/wolny/pytorch-3dunet).
 
----
-
-Files Exist
-
----
-
 ## Features
 
 - **3D Attention UNet Architecture**: Enhances standard UNet with attention gates to focus on relevant tumor regions.  
