@@ -1,86 +1,26 @@
-
-# 3D Attention UNet for Brain Tumor Segmentation and Survival Prediction
-
-This repository contains the official implementation of the paper: **“Brain Tumor Segmentation and Survival Prediction using 3D Attention UNet”** ([preprint](https://arxiv.org/pdf/2104.00985.pdf)).  
-The project provides a deep learning framework for **3D brain tumor segmentation** from MRI scans, leveraging attention mechanisms to improve model focus and segmentation accuracy.  
-
-The baseline UNet3D implementation is adopted from [PyTorch-3DUNet](https://github.com/wolny/pytorch-3dunet).
-
-## Features
-
-- **3D Attention UNet Architecture**: Enhances standard UNet with attention gates to focus on relevant tumor regions.  
-- **Multi-Modal MRI Support**: Works with FLAIR, T1, T1CE, and T2 MRI scans from BraTS 2019 dataset.  
-- **Segmentation and Survival Prediction**: Provides modules for both tumor segmentation and optional survival prediction tasks.  
-- **Advanced Preprocessing & Augmentation**: Normalization, patch extraction, flipping, rotation, and intensity augmentation.  
-- **Flexible PyTorch Implementation**: Modular design for easy experimentation with hyperparameters, architectures, and datasets.  
-- **Evaluation Metrics**: Dice Score, Hausdorff Distance, Sensitivity, Specificity, and more.
-
----
-
-## Repository Structure
-BRaTs-Attention-Tumor-Segmentation-UNet/
+🧠 3D Attention UNet for Brain Tumor Segmentation and Survival PredictionThis repository contains the official implementation of the paper: “Brain Tumor Segmentation and Survival Prediction using 3D Attention UNet” (preprint).The project delivers a comprehensive deep learning framework for 3D brain tumor segmentation from MRI scans, utilizing attention mechanisms to significantly improve model focus and segmentation accuracy.The baseline UNet3D implementation is adopted from PyTorch-3DUNet.✨ Key Features3D Attention UNet Architecture: Enhances the standard UNet architecture with attention gates to prioritize relevant tumor regions within 3D volumes.Multi-Modal MRI Support: Designed to process FLAIR, T1, T1CE, and T2 MRI scans from the BraTS 2019 dataset.Segmentation & Survival Prediction: Provides distinct modules for both core tumor segmentation and an optional survival prediction task.Robust Preprocessing & Augmentation: Includes normalization, 3D patch extraction (for memory efficiency), rotations, flips, and intensity augmentation.Flexible PyTorch Implementation: Features a modular design for easy experimentation with hyperparameters, custom architectures, and diverse datasets.Comprehensive Evaluation Metrics: Supports quantitative evaluation using Dice Score, Hausdorff Distance, Sensitivity, and Specificity.📂 Repository StructureThe project is logically divided into Segmentation and Survival Prediction components:BRaTs-Attention-Tumor-Segmentation-UNet/
 ├── Segmentation/
-│ ├── 3d_attention_unet.py # Main UNet 3D model with attention
-│ ├── BuildingBlocks.py # Building blocks for the UNet architecture
-│ └── sca_3d.py # 3D spatial channel attention module
+│   ├── 3d_attention_unet.py       # Main UNet 3D model with attention mechanism
+│   ├── BuildingBlocks.py          # Core building blocks for the UNet architecture
+│   └── sca_3d.py                  # 3D spatial channel attention module
 │
 ├── Survival_Prediction/
-│ ├── Matlab/
-│ │ ├── Brats_valid/ # Validation and feature files for survival prediction
-│ │ │ ├── Best_mode_withRFE_XGB.ipynb
-│ │ │ ├── Normalizing.ipynb
-│ │ │ ├── XGB_withRFE_crossvalidation.ipynb
-│ │ │ ├── XGBregressor.ipynb
-│ │ │ ├── radiomics_normalized.csv
-│ │ │ ├── radiomic_normalized_SS.csv
-│ │ │ ├── radiomic_normalized_new.csv
-│ │ │ ├── radiomic_test_normalized.csv
-│ │ │ ├── radiomic_valid_normalized.csv
-│ │ │ ├── radiomic_valid_normalized.SS.csv
-│ │ │ ├── submission.csv
-│ │ │ ├── submission_best_14.csv
-│ │ │ ├── submission_best_14_csv
-│ │ │ └── ...other CSV and Jupyter files
-│ │ │
-│ │ └── Feature_Extraction/ # Feature extraction notebooks
-│ │ ├── Bland_Altman_plot.ipynb
-│ │ ├── Filename_into_textfile.ipynb
-│ │ ├── keplen_mier.ipynb
-│ │ ├── npy_fromcsv.ipynb
-│ │ └── spearmanr.ipynb
-│ │
-│ └── Python/
-│ ├── Classification/ # Classification models and notebooks
-│ └── Regression/ # Regression models and notebooks
+│   ├── Matlab/
+│   │   ├── Brats_valid/           # Validation and feature files (radiomics, XGBoost notebooks)
+│   │   │   └── ...CSV and Jupyter files (e.g., radiomics_normalized.csv, submission.csv)
+│   │   │
+│   │   └── Feature_Extraction/    # Notebooks for radiomics and statistical feature analysis
+│   │       └── ...Jupyter files (e.g., Bland_Altman_plot.ipynb, keplen_mier.ipynb)
+│   │
+│   └── Python/
+│       ├── Classification/        # Classification models and notebooks
+│       └── Regression/            # Regression models and notebooks
 │
-├── train.py # Training pipeline for segmentation
-├── evaluate.py # Evaluation pipeline for segmentation metrics
-├── inference.py # Inference scripts for new MRI volumes
-├── utils/ # Helper functions (data loaders, augmentation, metrics)
-├── configs/ # YAML/JSON configuration files for experiments
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
----
-
-## Dataset
-
-This project uses the **[BraTS 2019 dataset](https://www.med.upenn.edu/cbica/brats2019/data.html)**:  
-
-- **Multi-modal MRI scans**: FLAIR, T1, T1CE, T2  
-- **Tumor annotations**: Enhancing tumor, tumor core, whole tumor  
-- **Preprocessing**:  
-  - Normalization (zero-mean, unit variance per modality)  
-  - Patch extraction (3D volumes for memory efficiency)  
-  - Data augmentation: rotations, flips, intensity shifts  
-- **Download instructions**: Register on the official BraTS 2019 website to access the dataset.
-
----
-
-Acknowledgements
-
-Baseline UNet3D implementation: PyTorch-3DUNet
-
-BraTS 2019 dataset organizers
-
-All contributors and reviewers of the original paper
-
+├── train.py                       # Training pipeline for segmentation models
+├── evaluate.py                    # Evaluation pipeline for segmentation metrics
+├── inference.py                   # Inference scripts for new MRI volumes
+├── utils/                          # Helper functions (data loaders, augmentation, metrics)
+├── configs/                        # YAML/JSON configuration files for experiments
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project documentation
+🧪 DatasetThis work is based on the Multimodal Brain Tumor Segmentation Challenge 2019 (BraTS 2019) dataset.MRI ModalitiesAnnotationsKey Preprocessing StepsFLAIR, T1, T1CE, T2Enhancing tumor, Tumor core, Whole tumorNormalization (zero-mean, unit variance), 3D Patch ExtractionDownload Instructions: Registration is required on the official BraTS 2019 website to access the dataset.🙏 AcknowledgementsWe acknowledge the critical contributions of the following:Baseline UNet3D Implementation: PyTorch-3DUNetDataset Organizers: The BraTS 2019 dataset organizers.Contributors: All contributors and reviewers of the original research paper.
