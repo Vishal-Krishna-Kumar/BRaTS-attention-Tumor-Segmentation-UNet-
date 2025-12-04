@@ -8,20 +8,7 @@ The baseline UNet3D implementation is adopted from [PyTorch-3DUNet](https://gith
 
 ---
 
-## Table of Contents
-- [Features](#features)
-- [Repository Structure](#repository-structure)
-- [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Training](#training)
-  - [Evaluation](#evaluation)
-  - [Inference](#inference)
-- [Results](#results)
-- [Citation](#citation)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
-- [Future Work](#future-work)
+Files Exist
 
 ---
 
@@ -37,9 +24,42 @@ The baseline UNet3D implementation is adopted from [PyTorch-3DUNet](https://gith
 ---
 
 ## Repository Structure
-3D_Attention_UNet/
-├── data/ # Dataset handling scripts and preprocessing utilities
-├── models/ # Model architectures: UNet3D, Attention UNet, UNet++
+/BRaTs-attention-Tumor-Segmentatiin-UNet-
+├── Segmentation
+    |-3d_attention_unet.py
+    |-BuildingBlocks.py
+    |-sca_3d.py
+    
+├── survivak_prediction
+    |-matlab
+        |-Brats_valid#All the Model feature of UNET and BraTS 
+            |- Best_mode_withRFE_XGB.ipynb
+            |-Normalizing.ipynb
+            |-XGB_withRFE_crossvalidation
+            |-XGBregressor.ipynb
+            |-radiomics_normalized.csv
+            |-radiomic_normalized_SS.csv
+            |-radiomic_normalized_new.csv
+            |-radiomic_test_normalized.csv
+            |-radiomic_valid_normalized.csv
+            |-radiomic_valid_normalized.SS.csv
+            |-Another tow of radiomic files
+            |-submission.csv
+            |-submission_best_14.csv
+            |-submission_best_14_csv
+            |-rest of all the csv and jupyter files 
+        |-Feature Extraction
+            |-Bland Altman plot.ipynb
+            |-Filename_into_textfile.ipynb
+            |-keplen mier.ipynb
+            |-npy_fromcsv.ipynb
+            |-spearmanr.ipynb
+    -Python
+        |-Classification
+            |- All the folders and Model availables with jupyter notebook
+        |-Regression 
+            |- All folders and Model availabkle wirh notebook
+
 ├── train.py # Training pipeline
 ├── evaluate.py # Evaluation pipeline for segmentation metrics
 ├── inference.py # Inference scripts for new MRI volumes
@@ -65,13 +85,6 @@ This project uses the **[BraTS 2019 dataset](https://www.med.upenn.edu/cbica/bra
 
 ---
 
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/mobarakol/3D_Attention_UNet.git
-cd 3D_Attention_UNet
 Acknowledgements
 
 Baseline UNet3D implementation: PyTorch-3DUNet
