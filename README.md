@@ -1,6 +1,6 @@
 # 3D Attention UNet for Brain Tumor Segmentation and Survival Prediction
 
-This repository contains the official implementation of the paper: **"Brain Tumor Segmentation and Survival Prediction using 3D Attention UNet"** ([preprint](https://arxiv.org/pdf/2104.00985.pdf)).
+This repository contains the official implementation of the paper: **"Brain Tumor Segmentation and Survival Prediction using 3D Attention UNet "** .
 
 The project provides a deep learning framework for **3D brain tumor segmentation** from MRI scans, leveraging attention mechanisms to improve model focus and segmentation accuracy.
 
